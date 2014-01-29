@@ -81,7 +81,7 @@ public class CounterMenu extends Activity
 			{
 
 				counters.remove(counters.indexOf(currentCounter));
-				titles.remove(titles.indexOf(title));
+				titles.remove(findIndex(titles, title));
 
 				Intent ourIntent = new Intent(CounterMenu.this,
 						MainActivity.class);
@@ -110,7 +110,9 @@ public class CounterMenu extends Activity
 					public void onClick(DialogInterface dialog, int whichButton) {
 					  String value = input.getText().toString();
 					  currentCounter.setTitle(value);
-					  titles.set(titles.indexOf(title), value);
+
+					  
+					  titles.set(findIndex(titles, title), value + "                                          ");
 					  displayTitle.setText(value);
 					  // Do something with value!
 					  }
@@ -129,6 +131,13 @@ public class CounterMenu extends Activity
 			
 		});
 	}
+	
+	public int findIndex (ArrayList<String> titles, String title){
+		int index = 0;
+		for(int i=0; i<titles.size(); i++){
+			if (titles.get(i).split(" ", 2)[0].equalsIgnoreCase(title)){
+				index = i;}}
+		return index;}
 
 	public Counter getCurrentCounter()
 	{

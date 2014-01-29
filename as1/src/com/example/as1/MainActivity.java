@@ -35,6 +35,7 @@ public class MainActivity extends ListActivity {
 	public void setCounters(ArrayList<Counter> counters){
 	
 		this.counters = counters;}
+
 	
 	
 
@@ -45,15 +46,23 @@ public class MainActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 	}
-	
-	
+
+
+	protected void catCount(ArrayList<String>titles){
+		for (int i=0; i<titles.size(); i++){
+			String t = titles.get(i);
+			titles.set(i, t.substring(0, t.length() - 3) + Integer.toString(counters.get(i).getCount()));
+		}
+	}
+
 
 	@Override
 	protected void onResume()
 	{
 
-		// TODO Auto-generated method stub
-		super.onResume();
+	// TODO Auto-generated method stub
+	super.onResume();
+	catCount(titles);
 	final ArrayAdapter<String> counterAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, titles);
 	setListAdapter(counterAdapter);
 	counterAdapter.notifyDataSetChanged();
@@ -78,7 +87,7 @@ public class MainActivity extends ListActivity {
 			  ArrayList<Date> dates = new ArrayList<Date>();
 			  Counter new_counter = new Counter(0, value, dates);
 			  counters.add(new_counter);
-			  titles.add(value);
+			  titles.add(value + "                                           " + "0");
 			  counterAdapter.notifyDataSetChanged();
 			  // Do something with value!
 			  }
