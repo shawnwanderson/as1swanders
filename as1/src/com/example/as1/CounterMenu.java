@@ -83,8 +83,7 @@ public class CounterMenu extends Activity
 				counters.remove(counters.indexOf(currentCounter));
 				titles.remove(findIndex(titles, title));
 
-				Intent ourIntent = new Intent(CounterMenu.this,
-						MainActivity.class);
+				Intent ourIntent = new Intent(CounterMenu.this,MainActivity.class);
 				startActivity(ourIntent);
 
 			}
@@ -112,7 +111,7 @@ public class CounterMenu extends Activity
 					  currentCounter.setTitle(value);
 
 					  
-					  titles.set(findIndex(titles, title), value + "                                          ");
+					  titles.set(findIndex(titles, title), value);
 					  displayTitle.setText(value);
 					  // Do something with value!
 					  }
