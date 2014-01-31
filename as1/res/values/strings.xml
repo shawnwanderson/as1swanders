@@ -14,4 +14,5 @@
     <string name="displayCounter">count</string>
 	<string name="title">title</string>
 	<string name="createCounter">New Counter</string>
+	<string name="statPrompt">Stats By</string>
 </resources>

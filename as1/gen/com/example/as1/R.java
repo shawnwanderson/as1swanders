@@ -24,7 +24,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080009;
+        public static final int action_settings=0x7f08000a;
         public static final int bAdd=0x7f080002;
         public static final int bCreate=0x7f080008;
         public static final int bDelete=0x7f080004;
@@ -32,12 +32,14 @@ public final class R {
         public static final int bReset=0x7f080003;
         public static final int bSort=0x7f080007;
         public static final int bStats=0x7f080005;
+        public static final int spinner1=0x7f080009;
         public static final int tvDisplay=0x7f080001;
         public static final int tvTitle=0x7f080000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int counter_select=0x7f030001;
+        public static final int stats=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -54,6 +56,7 @@ public final class R {
         public static final int createCounter=0x7f05000c;
         public static final int displayCounter=0x7f05000a;
         public static final int edit_message=0x7f050001;
+        public static final int statPrompt=0x7f05000d;
         public static final int title=0x7f05000b;
         public static final int title_activity_main=0x7f050009;
     }

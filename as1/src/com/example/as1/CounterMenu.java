@@ -26,6 +26,7 @@ public class CounterMenu extends Activity
 	Button delete;
 	Button reset;
 	Button rename;
+	Button stats;
 	TextView display;
 	TextView displayTitle;
 
@@ -39,6 +40,7 @@ public class CounterMenu extends Activity
 		delete = (Button) findViewById(R.id.bDelete);
 		reset = (Button) findViewById(R.id.bReset);
 		rename = (Button) findViewById(R.id.bRename);
+		stats = (Button) findViewById(R.id.bStats);
 		display = (TextView) findViewById(R.id.tvDisplay);
 		displayTitle = (TextView) findViewById(R.id.tvTitle);
 		displayTitle.setText(title);
@@ -128,6 +130,19 @@ public class CounterMenu extends Activity
 				}
 
 			
+		});
+		
+		stats.setOnClickListener(new View.OnClickListener()
+		{
+
+			@Override
+			public void onClick(View v)
+			{
+				StatsActivity.setCurrentCounter(currentCounter);
+				Intent ourIntent = new Intent(CounterMenu.this, StatsActivity.class);
+				startActivity(ourIntent);
+
+			}
 		});
 	}
 	
